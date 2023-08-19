@@ -1,0 +1,18 @@
+.apInputRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  margin: auto;
+  padding: 2rem 2rem 2rem 2rem;
+  margin-top: 8rem;
+  border: 5px solid dashed;
+  background-color: blanchedalmond;
+}
+.imageInput {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
