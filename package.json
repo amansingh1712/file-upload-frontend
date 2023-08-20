@@ -12,6 +12,7 @@
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
     "axios": "^1.4.0",
+    "copy-to-clipboard": "^3.3.3",
     "file-saver": "^2.0.5",
     "formik": "^2.4.3",
     "react": "^18.2.0",

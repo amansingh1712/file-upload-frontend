@@ -9,6 +9,7 @@ import { Axios } from '../helpers/axios';
 // import { uploadLoader } from '../utils/images';
 import { saveAs } from 'file-saver';
 import './fileupload.css';
+import copy from 'copy-to-clipboard';
 
 export const FileUpload: React.FC<any> = ({ name, label, formik, ...rest }) => {
   const { touched, error } = formik.getFieldMeta(name);
@@ -117,17 +118,27 @@ export const FileUpload: React.FC<any> = ({ name, label, formik, ...rest }) => {
       });
   };
 
+  // const copyLink = () => {
+  //   navigator.clipboard.writeText(shortUrl).then(
+  //     () => {
+  //       toast.success('Link copied to clipboard.', {
+  //         position: 'top-center',
+  //       });
+  //     },
+  //     () => {
+  //       toast.success("Error ! Can't copy the link");
+  //     }
+  //   );
+  // };
+
   const copyLink = () => {
-    navigator.clipboard.writeText(shortUrl).then(
-      () => {
-        toast.success('Link copied to clipboard.', {
-          position: 'top-center',
-        });
-      },
-      () => {
-        toast.success("Error ! Can't copy the link");
-      }
-    );
+    if (copy(shortUrl)) {
+      toast.success('Link copied to clipboard.', {
+        position: 'top-center',
+      });
+    } else {
+      toast.error("Error! Can't copy the link.");
+    }
   };
 
   return (
